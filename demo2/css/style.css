@@ -1,9 +1,25 @@
 @charset "utf-8";
+.myheader,.myfooter,.mymain{
+	position: absolute;
+	left: 0px;
+	right: 0px;
+}
 .myheader{
 	height: 45px;
 	background-color: #63c7d3;
 	line-height: 45px;
 	text-align: center;
-	font-size: 30px;
+	font-size: 3rem;
 	color: #fff;
+	
 }
+.mymain{
+	bottom: 45px;
+}
+.myfooter{
+	height: 45px;
+	background: #565656;
+	text-align: center;
+	bottom: 0px;
+}
+
