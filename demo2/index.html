@@ -37,9 +37,7 @@
 
                 if (speed > SHAKE_THRESHOLD) {
                     alert("摇动了");
-                    media.setAttribute("src", "http://211.148.5.228:8002/Pages/test/Kalimba.mp3");
-                    media.load();
-                    media.play();  
+                    
                 }
                 last_x = x;
                 last_y = y;
@@ -54,9 +52,10 @@
         HOME
     </header>
     <article class="mymain">
-        <p>用力摇一摇你手机</p>
-        <audio style="display:hiden" id="musicBox" preload="metadata" controls src="http://211.148.5.228:8002/Pages/test/Kalimba.mp3" autoplay="false"> 
-        </audio>
+        <div class="msgCon">
+            摇一摇
+        </div>
+
     </article>
     <footer class="myfooter">
 
