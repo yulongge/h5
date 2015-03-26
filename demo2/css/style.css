@@ -51,7 +51,39 @@ body{
 	-0-border-radius:10px;
 	-ms-border-radius:10px;
 }
+.arrow{
+	width: 50px;
+	height: 29px;
+	position: absolute;
+	top: 50%;
+	margin-top:90px;
+	left: 50%;
+	margin-left: -25px;
+}
+.arrow img{
+	width: 50px;
+	height: 29px;
+	-webkit-animation: start 1.5s infinite ease-in-out;
+	-moz-animation: start 1.5s infinite ease-in-out;
+	animation: start 1.5s infinite ease-in-out;
+}
 
+/*箭头指示引导*/
+@-webkit-keyframes start {
+	0%,30% {opacity: 0;-webkit-transform: translate(0,10px);}
+	60% {opacity: 1;-webkit-transform: translate(0,0);}
+	100% {opacity: 0;-webkit-transform: translate(0,-8px);}
+}
+@-moz-keyframes start {
+	0%,30% {opacity: 0;-moz-transform: translate(0,10px);}
+	60% {opacity: 1;-moz-transform: translate(0,0);}
+	100% {opacity: 0;-moz-transform: translate(0,-8px);}
+}
+@keyframes start {
+	0%,30% {opacity: 0;transform: translate(0,10px);}
+	60% {opacity: 1;transform: translate(0,0);}
+	100% {opacity: 0;transform: translate(0,-8px);}
+}
 
 
 
