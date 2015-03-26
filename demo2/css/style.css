@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 .myheader,.myfooter,.mymain{
 	position: absolute;
 	left: 0px;
@@ -17,6 +18,9 @@ body{
 	
 }
 .mymain{
+	
+	background: #434343;
+	top: 45px;
 	bottom: 45px;
 	
 }
