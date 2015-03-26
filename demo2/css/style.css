@@ -33,10 +33,10 @@ body{
 }
 
 .mymain .msgCon{
-	width: 200px;
+	width: 80%;
 	height: 90px;
 	border: 1px solid #565656;
-	font-size: 30px;
+	font-size: 3rem;
 	line-height: 90px;
 	color: #a2a2a2;
 	text-align: center;
@@ -44,7 +44,7 @@ body{
 	top: 50%;
 	margin-top: -45px;
 	left: 50%;
-	margin-left: -100px;
+	margin-left: -40%;
 	border-radius: 10px;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
