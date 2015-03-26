@@ -5,11 +5,7 @@
 	right: 0px;
 }
 body{
-	background: url(long.jpg) no-repeat center center; 
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
+	
 }
 .myheader{
 	height: 45px;

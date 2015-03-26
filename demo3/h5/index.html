@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/animation.css"/>
+    <link rel="stylesheet" href="css/demo-single-page.css"/>
+    <style>
+
+    #loading{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 9;
+        width: 160px;
+        height: 130px;
+        background: url(images/loading.jpg) no-repeat 50% 50%;
+        -webkit-background-size: cover;
+        background-size: cover;
+        color: #333;
+        -webkit-transform: translate(-50%,-50%);
+    }
+    #loading b{
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        text-align: center;
+    }
+    .pt-page-1{background-image: url(images/001.jpg);}
+    .pt-page-2{background-image: url(images/002.jpg);}
+    .pt-page-3{background-image: url(images/003.jpg);}
+    .pt-page-4{background-image: url(images/004.jpg);}
+    .pt-page-5{background-image: url(images/005.jpg);}
+    .pt-page-6{background-image: url(images/006.jpg);}
+    .pt-page-7{background-image: url(images/007.jpg);}
+    .pt-page-8{background-image: url(images/008.jpg);}
+    .pt-page-9{background-image: url(images/009.jpg);}
+    .pt-page-10{background-image: url(images/010.jpg);}
+    .pt-page-11{background-image: url(images/011.jpg);}
+    .pt-page-12{background-image: url(images/012.jpg);}
+    .pt-page-13{background-image: url(images/013.jpg);}
+    /*.pt-page{-webkit-background-size: contain;}*/
+	.pt-trigger-container{display:none;}
+    
+    .btn.share,
+    .mv{
+        position: absolute;
+        left: 45%;
+        right: 45%;
+        bottom: 13%;
+        top: 79%;
+        z-index: 9;
+        background-color: rgba(255,255,255,.1);
+        border-radius: 300px;
+
+        color: transparent;
+        -webkit-user-select: none;
+        text-shadow: none !important;
+    }
+    .mv{
+        right: 42%;
+        bottom: 64%;
+        top: 27%;
+    }
+    #tenvideo_video_player_0{
+        display: none;
+        position: absolute;
+        z-index: 1041;
+        left: 0;
+        right: 0;
+        top: 0;
+        top: 50%;
+        -webkit-transform: translate(0,-50%);
+        background-color: rgba(255,255,255,.3);
+    }
+    .point-top {
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /*right: 35px;*/
+        /*height: 140px;*/
+        background: url(images/img_point.png) no-repeat 50% 50%;
+        /*background-size: cover;*/
+        -webkit-background-size: cover;
+        background-size: cover;
+
+        color: transparent;
+        -webkit-user-select: none;
+        text-shadow: none !important;
+    }
+
+    .m-backdrop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1040;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    </style>
+</head>
+
+<body>
+<!-- <div id="loading">loading</div> -->
+<img src="images/loading.jpg" style="display:none;" >
+<div id="imgbox" style="display:none;">
+    <img _src="images/001.jpg" >    
+    <img _src="images/002.jpg" >
+    <img _src="images/003.jpg" >
+    <img _src="images/004.jpg" >
+    <img _src="images/005.jpg" >     
+    <img _src="images/006.jpg" >
+    <img _src="images/007.jpg" >
+    <img _src="images/008.jpg" >
+    <img _src="images/009.jpg" >
+    <img _src="images/010.jpg" >
+    <img _src="images/011.jpg" >
+    <img _src="images/012.jpg" >
+    <img _src="images/img_point.png" >
+</div>
+<div class="pt-wrapper" style="-webkit-touch-callout:none;">
+    <div class="pt-trigger-container">
+        <!-- 15 16 -->
+        <button class="pt-trigger" data-animation="53" data-goto="-1">Go to next page</button>
+        <button class="pt-trigger" data-animation="52" data-goto="-2">Go to previous page</button>
+
+    </div>
+
+    <!--All Pages-->
+    <div class="pt-page pt-page-1">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-2">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-3">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-4">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-5">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-6">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-7">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-8">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-9">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-10">
+        <h1><strong></strong></h1>
+        <a class="btn mv">播放视频</a>
+        <!-- <video src="movie.ogg" controls="controls">
+            您的浏览器不支持 video 标签。
+        </video> -->
+    </div>
+    <div class="pt-page pt-page-11">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-12">
+        <h1><strong></strong></h1>
+        <a class="btn share">分享</a>
+    </div>
+
+    <!-- 声音 -->
+    <div class="music" id="music"></div>
+    <!-- 箭头指示引导 -->
+    <div class="u-arrow"><p class="css_sprite01"></p></div>
+
+</div>
+    <!-- Loading -->
+    <div id="loading">
+        <!-- <div class="spinner">
+          <div class="dot1"></div>
+          <div class="dot2"></div>            
+        </div> -->
+      <b></b>
+    </div>
+<!-- 点击右上角提示 -->
+<div id="Share" class="point-top" style="display:none;">点击右上角提示,发送给朋友或分享到朋友圈</div>
+
+<!-- 遮罩层 -->
+<div id="Mask" class="m-backdrop" style="display:none;"></div>
+
+<!-- <video id="tenvideo_video_player_0" width="100%" height="60%" x-webkit-airplay="true" controls="" preload="none" src="http://182.118.63.18/vkp.tc.qq.com/b0014xtrdfe.mp4?vkey=C8F0E9E2FF11FF8CC51FFDAB6F2A93846ADB50859EB7106039BED8A22D138C15CBE76EAF3847B7AFEB286E784EB4C0745DC6172D2EFE24F2&amp;br=59&amp;platform=2&amp;fmt=mp4&amp;level=0&amp;sdtfrom=v4010"></video> -->
+<video id="tenvideo_video_player_0" width="100%" height="50%" x-webkit-airplay="true" controls="" preload="none" src="http://v001.baomihua.com/pomoho_video/34172286.mp4"></video>
+
+<script src="js/zepto.min.js"></script>
+<script src="js/z-touch.js"></script>
+<script src="js/papp.js"></script>
+<script src="js/transition-ZS.js"></script>
+<script type="text/javascript">
+
+function loading() {
+    var imgList = $('#imgbox img');
+    var len = imgList.length, count = 0;
+    
+    imgList.each(function(index, img) {
+        var imgT= new Image();
+        imgT.src=$(img).attr('_src');
+        //$(img).attr('src', $(img).attr('_src'));
+        // $(img).load(function(){
+        //$(img).onload=function(){ 
+        imgT.onload=function(){
+            $('#imgbox').hide();
+            $('.pt-wrapper').hide();
+            count++;
+            $(img).attr("src", imgT.src);
+            $(img).show();
+            // $('#loading span').html('图片加载中。。。' + parseInt(count/len * 100,10) + '%');
+            $('#loading b').html( parseInt(count/len * 100,10) + '%');
+            if(count == len) {
+                $('#loading').hide();
+                $('.pt-wrapper').show();
+            }
+            console.log('ok' + index)
+        };
+    });
+}
+
+$(function () {
+    loading();
+
+	document.addEventListener('touchmove', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+	}, false);
+	
+	var btns = $('.pt-trigger');
+	function go(dire) {
+		var btn = dire == 'up' ? btns.eq(0) : btns.eq(1);
+		PageTransitions.Animate(btn);
+	}
+	
+	$(document).swipeUp(function() {		
+		go('up');
+	});
+
+	$(document).swipeDown(function() {
+		go('down')
+	});
+
+          
+    //音乐
+    papp.audio({
+          target : ".music",
+             src : "http://weixin-static.vip.com/uploadfiles/worker/resources/media/music.mp3",
+         preload : "auto",
+            loop : true,
+        autoPlay : true
+    });
+
+    //播放视频
+    $('.mv').tap(function (event) {
+        papp.audio.pause();
+
+        M.style.display="block";
+        $("#tenvideo_video_player_0").show();
+        document.getElementById("tenvideo_video_player_0").play();
+        // $("#tenvideo_video_player_0").play();
+        
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+    });    
+
+    $('#Mask').tap(function (){
+        papp.audio.play();
+
+        M.style.display="none";
+        $("#tenvideo_video_player_0").hide();
+
+         event.stopPropagation();
+        event.stopImmediatePropagation();       
+    });
+
+    // 分享弹层
+    // ---------------------------------
+    var M=document.getElementById("Mask"),S=document.getElementById("Share");
+    $('.share').tap(function (event) {
+        
+        // M.style.display="block";
+        S.style.display="block";
+        
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+    });
+    $('#Share').tap(function (){
+        // M.style.display="none";
+        S.style.display="none";
+    });
+
+
+    $('a').click(function(event) {
+        event.preventDefault();
+    }).tap(function(event) {
+        location.href = event.currentTarget.href;
+    });
+
+
+});
+
+// 分享制作
+// ---------------------------------
+    var
+    // this_timeImg    =  "share.jpg",
+    this_timeImg    =  "001.jpg",
+    this_title      =  "标题", 
+    this_desc       =  "看《黄金时代》，在线选座享双重优惠";
+
+    function resolve() {
+        var WeixinJSBridge = window.WeixinJSBridge;
+
+        // var imgUrl = location.href.replace(/\/(index.html)?$/, '/') + 'images/' + this_timeImg;
+
+        var c1 = location.href.lastIndexOf('/');
+        var c2 = location.href.indexOf("?");
+        var tempurl= location.href;//.replace(/\/(index.html)?$/, '/');
+        if (c2> 0) {
+            tempurl=tempurl.substring(0,c2-1);
+        }else{
+            tempurl=tempurl.substring(0,c1);
+        }
+        var imgUrl = tempurl + "/images/" + this_timeImg;
+
+        
+        // alert(imgurl);
+        var imgW = 200;
+        var imgH = 200;
+        
+        var desc = this_desc;
+        var backLink = tempurl + "/";
+        //this_title = backLink ;
+        var title = this_title;
+        // .replace(/([?&])channel=wxmovie(&?)/,"$1").replace(/[?&]$/,"");
+
+        //分享到好友
+        WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+            WeixinJSBridge.invoke("sendAppMessage", {
+                "appid": 'wx92cf60f7577e2d48',
+                "img_url": imgUrl, // 分享到朋友圈的缩略图
+                "img_width": imgW, // 图片的长度
+                "img_height": imgH, // 图片高度
+                "link": backLink, // 连接地址
+                "desc": desc, // 描述
+                "title": title // 分享标题
+            }, noop);
+        });
+        //分享到朋友圈
+        WeixinJSBridge.on('menu:share:timeline', function (argv) {
+            WeixinJSBridge.invoke("shareTimeline", {
+                "appid": 'wx92cf60f7577e2d48',
+                "img_url": imgUrl, // 分享到朋友圈的缩略图
+                "img_width": imgW, // 图片的长度
+                "img_height": imgH, // 图片高度
+                "link": backLink, // 连接地址
+                "desc": desc, // 描述
+                "title": desc // 分享标题
+            }, noop);
+        });
+        //分享到微博
+        WeixinJSBridge.on('menu:share:weibo', function (argv) {
+            WeixinJSBridge.invoke('shareWeibo', {
+                "content": desc,
+                "url": backLink
+            }, noop);
+        });
+
+        function noop() {
+        }
+    }
+    if (document.addEventListener) {
+        document.addEventListener('WeixinJSBridgeReady', resolve, false);
+    } else if (document.attachEvent) {
+        document.attachEvent('WeixinJSBridgeReady', resolve);
+        document.attachEvent('onWeixinJSBridgeReady', resolve);
+    }
+
+</script>
+</body>
+</html>
