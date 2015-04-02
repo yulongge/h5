@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/animation.css"/>
+    <link rel="stylesheet" href="css/demo-single-page.css"/>
+    <style>
+
+    #loading{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 9;
+        width: 160px;
+        height: 130px;
+        background: url(images/loading.jpg) no-repeat 50% 50%;
+        -webkit-background-size: cover;
+        background-size: cover;
+        color: #333;
+        -webkit-transform: translate(-50%,-50%);
+        display: none;
+    }
+    #loading b{
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        text-align: center;
+    }
+    .pt-page-1{background-image: url(images/001.jpg);}
+    .pt-page-2{background-image: url(images/002.jpg);}
+    .pt-page-3{background-image: url(images/003.jpg);}
+    .pt-page-4{background-image: url(images/004.jpg);}
+    .pt-page-5{background-image: url(images/005.jpg);}
+    .pt-page-6{background-image: url(images/006.jpg);}
+    .pt-page-7{background-image: url(images/007.jpg);}
+    .pt-page-8{background-image: url(images/008.jpg);}
+    .pt-page-9{background-image: url(images/009.jpg);}
+    .pt-page-10{background-image: url(images/010.jpg);}
+    .pt-page-11{background-image: url(images/011.jpg);}
+    .pt-page-12{background-image: url(images/012.jpg);}
+    .pt-page-13{background-image: url(images/013.jpg);}
+    /*.pt-page{-webkit-background-size: contain;}*/
+	.pt-trigger-container{display:none;}
+    
+    .btn.share,
+    .mv{
+        position: absolute;
+        left: 45%;
+        right: 45%;
+        bottom: 13%;
+        top: 79%;
+        z-index: 9;
+        background-color: rgba(255,255,255,.1);
+        border-radius: 300px;
+
+        color: transparent;
+        -webkit-user-select: none;
+        text-shadow: none !important;
+    }
+    .mv{
+        right: 42%;
+        bottom: 64%;
+        top: 27%;
+    }
+    #tenvideo_video_player_0{
+        display: none;
+        position: absolute;
+        z-index: 1041;
+        left: 0;
+        right: 0;
+        top: 0;
+        top: 50%;
+        -webkit-transform: translate(0,-50%);
+        background-color: rgba(255,255,255,.3);
+    }
+    .point-top {
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /*right: 35px;*/
+        /*height: 140px;*/
+        background: url(images/img_point.png) no-repeat 50% 50%;
+        /*background-size: cover;*/
+        -webkit-background-size: cover;
+        background-size: cover;
+
+        color: transparent;
+        -webkit-user-select: none;
+        text-shadow: none !important;
+    }
+
+    .m-backdrop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1040;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    </style>
+</head>
+
+<body>
+<!-- <div id="loading">loading</div> -->
+<img src="images/loading.jpg" style="display:none;" >
+<div id="imgbox" style="display:none;">
+    <img _src="images/001.jpg" >    
+    <img _src="images/002.jpg" >
+    <img _src="images/003.jpg" >
+    <img _src="images/004.jpg" >
+    <img _src="images/005.jpg" >     
+    <img _src="images/006.jpg" >
+    <img _src="images/007.jpg" >
+    <img _src="images/008.jpg" >
+    <img _src="images/009.jpg" >
+    <img _src="images/010.jpg" >
+    <img _src="images/011.jpg" >
+    <img _src="images/012.jpg" >
+    <img _src="images/img_point.png" >
+</div>
+<div class="pt-wrapper" style="-webkit-touch-callout:none;">
+    <div class="pt-trigger-container">
+        <!-- 15 16 -->
+        <button class="pt-trigger" data-animation="53" data-goto="-1">Go to next page</button>
+        <button class="pt-trigger" data-animation="52" data-goto="-2">Go to previous page</button>
+
+    </div>
+
+    <!--All Pages-->
+    <div class="pt-page pt-page-1">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-2">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-3">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-4">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-5">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-6">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-7">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-8">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-9">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-10">
+        <h1><strong></strong></h1>
+        <a class="btn mv">播放视频</a>
+        <!-- <video src="movie.ogg" controls="controls">
+            您的浏览器不支持 video 标签。
+        </video> -->
+    </div>
+    <div class="pt-page pt-page-11">
+        <h1><strong></strong></h1>
+    </div>
+    <div class="pt-page pt-page-12">
+        <h1><strong></strong></h1>
+        <a class="btn share">分享</a>
+    </div>
+
+    <!-- 声音 -->
+    <div class="music" id="music"></div>
+    <!-- 箭头指示引导 -->
+    <div class="u-arrow"><p class="css_sprite01"></p></div>
+
+</div>
+    <!-- Loading -->
+    <div id="loading">
+        <!-- <div class="spinner">
+          <div class="dot1"></div>
+          <div class="dot2"></div>            
+        </div> -->
+      <b></b>
+    </div>
+<!-- 点击右上角提示 -->
+<div id="Share" class="point-top" style="display:none;">点击右上角提示,发送给朋友或分享到朋友圈</div>
+
+<!-- 遮罩层 -->
+<div id="Mask" class="m-backdrop" style="display:none;"></div>
+
+<!-- <video id="tenvideo_video_player_0" width="100%" height="60%" x-webkit-airplay="true" controls="" preload="none" src="http://182.118.63.18/vkp.tc.qq.com/b0014xtrdfe.mp4?vkey=C8F0E9E2FF11FF8CC51FFDAB6F2A93846ADB50859EB7106039BED8A22D138C15CBE76EAF3847B7AFEB286E784EB4C0745DC6172D2EFE24F2&amp;br=59&amp;platform=2&amp;fmt=mp4&amp;level=0&amp;sdtfrom=v4010"></video> -->
+<video id="tenvideo_video_player_0" width="100%" height="50%" x-webkit-airplay="true" controls="" preload="none" src="http://v001.baomihua.com/pomoho_video/34172286.mp4"></video>
+
+<script src="js/zepto.min.js"></script>
+<script src="js/z-touch.js"></script>
+<script src="js/papp.js"></script>
+<script src="js/transition-ZS.js"></script>
+<script type="text/javascript">
+    $(function() {
+       $(document).swipeUp(function() {     
+            alert(32);
+        });
+    });
+</script>
+</body>
+</html>
