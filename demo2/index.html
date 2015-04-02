@@ -13,7 +13,31 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="js/zepto.min.js"></script>
+
+
+</head>
+<body onload="init()">
+    <header class="myheader">
+        HOME
+    </header>
+    <article class="mymain">
+        <div class="msgCon">
+            摇一摇
+        </div>
+        <div class="arrow">
+            <img src="css/arrow.png" />
+        </div>
+
+    </article>
+    <footer class="myfooter">
+
+    </footer>
+
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/event.js"></script>
+    <script type="text/javascript" src="js/fx.js"></script>
+    <script type="text/javascript" src="js/touch.js"></script>
+    
     <script type="text/javascript">
         var SHAKE_THRESHOLD = 3000;
         var last_update = 0;
@@ -46,30 +70,14 @@
             }
         }
 
-        $(function(){
-            alert(3);
-            $(".arrow img").swipeUp(function(){
-                alert(3);
-            });
-        });
+        
+           
+       
     </script>
-
-</head>
-<body onload="init()">
-    <header class="myheader">
-        HOME
-    </header>
-    <article class="mymain">
-        <div class="msgCon">
-            摇一摇
-        </div>
-        <div class="arrow">
-            <img src="css/arrow.png" />
-        </div>
-
-    </article>
-    <footer class="myfooter">
-
-    </footer>
+    <script>
+    		$(".arrow").swipe(function(){
+    			alert(3);
+    		});
+    </script>
 </body>
 </html>
