@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" type="text/css" href="css/reset.css" >
-    <link rel="stylesheet" type="text/css" href="css/style.css" >
+    <link rel="stylesheet" type="text/css" href="css/page.css" >
 </head>
 <body> 
     <header class="myheader">
@@ -17,10 +17,14 @@
     </header> 
     <div class="mymain">
         <div class="myimage">
-            <img src="css/012.jpg">
+            <img src="css/012.jpg" class="active">
+            <img src="css/011.jpg">
+            <img src="css/010.jpg">
+            <img src="css/009.jpg">
+            <img src="css/008.jpg">
         </div>
         <div class="arrow arrowUp">
-            <img src="css/arrow.png">
+            <img src="css/arrow.png" class="">
         </div>
         <div class="arrow arrowDown">
             <img src="css/arrow2.png">
@@ -42,29 +46,17 @@
                 e.stopPropagation();
             }, false);
 
-           $(document).swipeUp(function() {     
-                //alert(32);
-                /*$(".myimage").animate({
-                    top:"-10px"
-                }, 500,"ease-out");*/
-                $(".myimage").animate({
-                  opacity: 0, left: '50px',
-                  color: '#abcdef',
-                  rotateZ: '360deg'
-                }, 800, 'ease-out',function(){
-                    $(".myimage").hide();
-                });
+           $(document).swipeUp(function() {   
+                var imgLength = $(".mymain .myimage img");
+                /*$(".mymain .myimage img").attr("class","");
+                $(".mymain .myimage img").eq(0).addClass("moveRight");*/
             });
-           $(document).swipeDown(function() { 
-                $(".myimage").show();    
-                $(".myimage").animate({
-                  opacity: 1, left: '-50px',
-                  color: '#abcdef',
-                  rotateZ: '0deg'
-                }, 800, 'ease-out');
+           $(document).swipeDown(function() {
+               /* $(".mymain .myimage img").attr("class","");
+                $(".mymain .myimage img").eq(0).addClass("moveLeft");*/
             });
            $(".myimage").tap(function(event) {
-               //alert("click");
+
            });
         });
     </script>

@@ -59,6 +59,7 @@ body{
 	margin-top:90px;
 	left: 50%;
 	margin-left: -25px;
+	z-index: 40;
 }
 .arrowUp img{
 	width: 50px;
@@ -81,11 +82,29 @@ body{
 	width:100%;
 	height: 100%;
 	background: blue;
+
 }
 .mymain .myimage img{
 	width: 100%;
 	height: 100%;
 	border: none;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 10;
+}
+.mymain .myimage .active{
+	z-index: 20;
+}
+.mymain .myimage .moveLeft{
+	-webkit-animation:moveLeft .6s ease both;
+	-moz-animation:moveLeft .6s ease both;
+	animation:moveLeft .6s ease both;
+}
+.mymain .myimage .moveRight{
+	-webkit-animation:moveRight .6s ease both;
+	-moz-animation:moveRight .6s ease both;
+	animation:moveRight .6s ease both;
 }
 /*箭头指示引导*/
 @-webkit-keyframes start {
@@ -121,8 +140,25 @@ body{
 }
 
 
+@-webkit-keyframes moveLeft{
+	to{-webkit-transform:translateX(-100%);}
+}
+@-moz-keyframes moveLeft{
+	to{-moz-transform:translateX(-100%);}
+}
+@keyframes moveLeft{
+	to{transform:tranlateX(-100%);}
+}
 
-
+@-webkit-keyframes moveRight{
+	to{-webkit-transform:translateX(0px);}
+}
+@-moz-keyframes moveRight{
+	to{-moz-transform:translateX(0px);}
+}
+@keyframes moveRight{
+	to{transform:tranlateX(0px);}
+}
 
 
 
