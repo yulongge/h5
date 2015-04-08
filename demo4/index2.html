@@ -47,13 +47,38 @@
             }, false);
 
            $(document).swipeUp(function() {   
-                var imgLength = $(".mymain .myimage img");
+                var allImage = $(".mymain .myimage img");
+                var currentImage = $(".mymain .myimage .active");
+                var currentIndex = currentImage.index();
+
+                var nextImage = currentImage.next("img");
+                //alert(currentIndex);
+                if(currentIndex>=allImage.length-1){
+                    nextImage = allImage.eq(0);
+                }
+                allImage.attr("class","");
+                nextImage.addClass('active');
+                currentImage.addClass('moveRight')
+
                 /*$(".mymain .myimage img").attr("class","");
                 $(".mymain .myimage img").eq(0).addClass("moveRight");*/
             });
            $(document).swipeDown(function() {
                /* $(".mymain .myimage img").attr("class","");
                 $(".mymain .myimage img").eq(0).addClass("moveLeft");*/
+
+                var allImage = $(".mymain .myimage img");
+                var currentImage = $(".mymain .myimage .active");
+                var currentIndex = currentImage.index();
+
+                var prevImage = currentImage.prev("img");
+                //alert(currentIndex);
+                if(currentIndex<=0){
+                    prevImage = allImage.eq(allImage.length-1);
+                }
+                allImage.attr("class","");
+                prevImage.addClass('active');
+                currentImage.addClass('moveLeft')
             });
            $(".myimage").tap(function(event) {
 
